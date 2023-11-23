@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "lib": ["ES2019", "DOM"],
+    "sourceMap": false,
+    "rootDir": "src",
+    "declaration": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "newLine": "lf",
+    "allowSyntheticDefaultImports": true,
+    "strict": false
+  },
+  "exclude": ["node_modules", "dist"]
+}

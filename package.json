@@ -1,0 +1,48 @@
+{
+  "name": "monaco-jsona",
+  "version": "0.2.0",
+  "description": "Jsona plugin for monaco editor",
+  "author": "Sigoden Huang <sigoden@gmail.com>",
+  "type": "module",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build:worker": "rollup -c rollup.config.worker.mjs",
+    "build:index": "tsc -p tsconfig.build.json",
+    "build": "npm run clean && npm run build:index && npm run build:worker",
+    "prepublish": "npm run build",
+    "clean": "rm -rf dist || rmdir /s /q dist"
+  },
+  "keywords": [
+    "monaco",
+    "jsona"
+  ],
+  "files": [
+    "jsona.worker.js",
+    "index.js",
+    "index.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "monaco-editor": ">=0.34"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.34.0",
+    "monaco-languageclient": "^3.0.1",
+    "vscode-languageserver-protocol": "^3.17.2"
+  },
+  "devDependencies": {
+    "@jsona/lsp": "^0.2.0",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@types/node": "^20.6.3",
+    "@types/vscode": "^1.82.0",
+    "esbuild": "^0.19.3",
+    "rollup": "^3.29.2",
+    "rollup-plugin-esbuild": "^6.0.1",
+    "typescript": "^5.2.2"
+  }
+}
